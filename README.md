@@ -25,5 +25,10 @@ This repository uses Catch2 for unit testing. Catch2 is distributed under the te
 
 - Make your program able to build and link with FreeImage
 - Add Image.hpp to your include path or copy it in your code
+- In one single source file, add this:
+```cpp
+#define IMAGE_PP_IMPLEMENTS
+#include "Image.hpp"
+```
 - have fun
 
