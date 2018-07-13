@@ -27,7 +27,7 @@ if (WIN32)
 	# Find library files
 	find_library(
 		FREEIMAGE_LIBRARY
-		NAMES FreeImage
+		NAMES FreeImage FreeImage.lib
 		PATHS
 			$ENV{PROGRAMFILES}/lib
 			${FREEIMAGE_ROOT_DIR}/lib)
@@ -61,7 +61,6 @@ endif()
 # Handle REQUIRD argument, define *_FOUND variable
 find_package_handle_standard_args(FreeImage DEFAULT_MSG FREEIMAGE_INCLUDE_DIR FREEIMAGE_LIBRARY)
 
-# Define GLFW_LIBRARIES and GLFW_INCLUDE_DIRS
 if (FREEIMAGE_FOUND)
 	set(FREEIMAGE_LIBRARIES ${FREEIMAGE_LIBRARY})
 	set(FREEIMAGE_INCLUDE_DIRS ${FREEIMAGE_INCLUDE_DIR})
