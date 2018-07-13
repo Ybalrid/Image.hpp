@@ -214,7 +214,7 @@ class Image
         assert(x < width());
         assert(y < height());
         RGBQUAD color;
-        FreeImage_GetPixelColor(bitmap, x, y, &color);
+        FreeImage_GetPixelColor(bitmap, static_cast<unsigned int>(x), static_cast<unsigned int>(y), &color);
         return color;
     }
 
