@@ -1,5 +1,7 @@
 # Image.hpp
 
+[![Build Status](https://travis-ci.com/Ybalrid/Image.hpp.svg?branch=master)](https://travis-ci.com/Ybalrid/Image.hpp)
+
 C++ wrapper around FreeImage. Provide a simple, object based abstraction to represent an image file.
 
 ## Features
