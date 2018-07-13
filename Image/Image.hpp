@@ -224,7 +224,7 @@ class Image
         assert(bitmap);
         assert(x < width());
         assert(y < height());
-        FreeImage_SetPixelColor(bitmap, x, y, const_cast<RGBQUAD*>(&value));
+        FreeImage_SetPixelColor(bitmap, static_cast<unsigned int>(x), static_cast<unsigned int>(y), const_cast<RGBQUAD*>(&value));
     }
 
     ///get the array of bits that this image does
