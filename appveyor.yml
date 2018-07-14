@@ -1,0 +1,30 @@
+version: 0.0.{build}
+image: Visual Studio 2017
+init:
+- cmd: >-
+    set goback=%cd%
+
+
+    cd C:\
+
+
+    curl -fsSL -o freeimage.zip http://ybalrid.info/files/FreeImage.zip
+
+    7z x -y freeimage.zip
+
+
+    cd %goback%
+before_build:
+- cmd: >-
+    mkdir build
+
+    cd build
+
+    cmake .. -G "Visual Studio 15 2017 Win64" -DFREEIMAGE_ROOT_DIR:PATH="C:\FreeImage\"
+build:
+  verbosity: minimal
+test_script:
+- cmd: >-
+    cp C:\FreeImage\lib\FreeImage.dll .
+
+    ctest -C Debug
